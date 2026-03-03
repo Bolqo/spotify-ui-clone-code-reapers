@@ -1,0 +1,10 @@
+{
+  "name": "spotify-ui-clone-code-reapers",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass --watch src/scss/main.scss:src/css/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}
