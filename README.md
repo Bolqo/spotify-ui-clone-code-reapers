@@ -1,35 +1,36 @@
 # spotify-ui-clone-code-reapers
 
-Spotify-ის ვებ პლატფორმის ფრონტენდ კლონი, შექმნილი HTML, CSS, SASS და JavaScript-ის გამოყენებით.
+A frontend clone of the Spotify web platform, built using HTML, CSS, SASS, and JavaScript.
 
-ეს პროექტი წარმოადგენს Spotify-ის ვებ ინტერფეისის რეკრეაციას და შესრულებულია 10x-ის პირველი მოდულის დასრულების გამოცდის ფარგლებში.
+This project recreates the Spotify web interface and was developed as part of the final assessment for the first module at 10x.
 
-პროექტის მიზანია Spotify-ის დიზაინის, ლეიაუტისა და საბაზისო ფუნქციონალის მაქსიმალურად მიახლოებული იმპლემენტაცია თანამედროვე ფრონტენდ ტექნოლოგიების გამოყენებით.
+The main goal of the project is to closely replicate Spotify’s design, layout, and basic functionality using modern frontend technologies.
 
----
 
-## 🛠 გამოყენებული ტექნოლოგიები
+## 🛠 Used technologies:
+ - HTML5  
+ - CSS3  
+ - SCSS  
+ - GIT
 
-- HTML5  
-- CSS3  
-- SASS  
-- JavaScript
 
----
 
-## 🎯 პროექტის მიზნები
 
-- რესპონსიული დიზაინის შექმნა  
-- ლეიაუტის სწორი სტრუქტურირება (Flexbox & Grid)  
-- სემანტიკური HTML-ის გამოყენება  
-- ორგანიზებული და მასშტაბირებადი CSS/SASS არქიტექტურა  
-- სუფთა და წაკითხვადი კოდის სტილი
-- გუნდური მუშაობის პრაქტიკის გაღრმავება  
-- Git რეპოზიტორიაში ეფექტური მუშაობა  
+## 🎯 Project Goals
 
----
+- Achieve visual consistency with Figma design file:
+(https://www.figma.com/design/jrlUWJdbxTc2bKd5dpRa5r/10X-markup-exam-project---Spotify?node-id=3-2&p=f&t=CvC6PgOWXrEhvujH-0)
+- Implement proper HTML semantics
+- Create clean and well-structered CSS layout
+- Make website fully responsive (Desktop, Tablet, Mobile)
+- Maintain clean and readable code
+- Practice effective Git repository workflow
 
-## 👨‍💻 გუნდი
+## 👨‍💻 Team
 
-პროექტი შესრულებულია 10x-ის სტუდენტთა ჯგუფის  
-**Code Reapers** მიერ.
+This project is being developed by the 10x student team "Code Reapers".
+
+## Team Members:
+ - Irakli Bolkvadze
+ - Luka Kobuladze
+ - Enrike Bedinadze
