@@ -1,0 +1,15 @@
+# Compiled CSS
+src/css/
+
+# Node modules (if using npm for SASS or build tools)
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
