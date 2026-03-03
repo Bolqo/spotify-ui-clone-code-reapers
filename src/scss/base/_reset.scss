@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px (easy math)
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ── Media ──────────────────────────────────
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// ── Typography ─────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+// ── Lists ──────────────────────────────────
+ul, ol {
+  list-style: none;
+}
+
+// ── Links ──────────────────────────────────
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// ── Buttons ────────────────────────────────
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+// ── Inputs ─────────────────────────────────
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
