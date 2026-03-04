@@ -1,0 +1,79 @@
+@use '../abstracts/variables' as *;
+
+// ── Base ───────────────────────────────────
+body {
+  background-color: $color-bg-base;
+  color: $color-text;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// ── App Layout ─────────────────────────────
+.app {
+  display: grid;
+  grid-template-columns: 259px 1fr;
+  grid-template-rows: 54px 1fr 81px;
+  height: 100vh;
+}
+
+// ── Sidebar ────────────────────────────────
+.app__sidebar {
+    grid-column: 1;
+    grid-row: 1 / -1;
+}
+
+// ── Nav ────────────────────────────────────
+.app__nav {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+// ── Main ───────────────────────────────────
+.app__main {
+    display: grid;
+    grid-template-rows: 59px 1fr;
+    grid-template-columns: 1fr;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+// ── Header ────────────────────────────────
+.main__header {
+    grid-row: 1;
+}
+
+// ── Content ────────────────────────────────
+.main__content {
+    grid-row: 2;
+}
+
+// ── Footer / Player ────────────────────────
+.app__player {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+// ── Selection ──────────────────────────────
+::selection {
+    background-color: $color-primary;
+    color: $color-bg-base;
+}
+
+// ── Scrollbar ──────────────────────────────
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-bg-card;
+    border-radius: 4px;
+
+  &:hover {
+        background: $color-text-muted;
+  }
+}

@@ -1,0 +1,20 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# SVG files always LF
+*.svg text eol=lf
+
+# SCSS files always LF
+*.scss text eol=lf
+
+# HTML files always LF
+*.html text eol=lf
+
+# JS files always LF
+*.js text eol=lf
+
+# JSON files always LF
+*.json text eol=lf
+
+# Markdown files always LF
+*.md text eol=lf
