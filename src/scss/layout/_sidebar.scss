@@ -1,0 +1,81 @@
+@use '../abstracts/variables' as *;
+
+.sidebar__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $color-bg-elevated;
+    padding: 1.6rem 0;
+    overflow-y: auto;
+}
+
+// ── Header ─────────────────────────────────
+.sidebar__header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.sidebar__header-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.sidebar__header-title {
+    font-size: $text-base;
+    font-weight: $font-bold;
+    color: $color-text;
+}
+
+// ── Nav List ───────────────────────────────
+.sidebar__list {
+    display: flex;
+    flex-direction: column;
+}
+
+// ── Item ───────────────────────────────────
+.sidebar__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.6rem;
+
+    &:hover {
+        background-color: $color-bg-card;
+    }
+}
+
+// ── Link ───────────────────────────────────
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 1;
+}
+
+// ── Icon ───────────────────────────────────
+.sidebar__icon {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+// ── Label ──────────────────────────────────
+.sidebar__label {
+    font-size: $text-base;
+    font-weight: $font-medium;
+    color: $color-text-muted;
+
+    .sidebar__item:hover & {
+        color: $color-text;
+    }
+}
+
+// ── Arrow ──────────────────────────────────
+.sidebar__arrow {
+    width: 1.4rem;
+    height: 1.4rem;
+    flex-shrink: 0;
+}
