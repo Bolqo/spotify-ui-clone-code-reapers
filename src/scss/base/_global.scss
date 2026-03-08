@@ -12,18 +12,21 @@ body {
     grid-template-columns: 259px 1fr;
     grid-template-rows: 54px 1fr 81px;
     height: 100vh;
+    border: 1px solid rgb(105, 104, 104);
 }
 
 // ── Sidebar ────────────────────────────────
 .app__sidebar {
     grid-column: 1;
     grid-row: 1 / -1;
+    border: 1px solid rgb(105, 104, 104);
 }
 
 // ── Nav ────────────────────────────────────
 .app__nav {
     grid-column: 2;
     grid-row: 1;
+    border: 1px solid rgb(105, 104, 104);
 }
 
 // ── Main ───────────────────────────────────
@@ -33,22 +36,26 @@ body {
     grid-template-columns: 1fr;
     grid-column: 2;
     grid-row: 2;
+    border: 1px solid rgb(105, 104, 104);
 }
 
 // ── Header ────────────────────────────────
 .main__header {
     grid-row: 1;
+    border: 1px solid rgb(105, 104, 104);
 }
 
 // ── Content ────────────────────────────────
 .main__content {
     grid-row: 2;
+    border: 1px solid rgb(105, 104, 104);
 }
 
 // ── Footer / Player ────────────────────────
 .app__player {
     grid-column: 2;
     grid-row: 3;
+    border: 1px solid rgb(105, 104, 104);
 }
 
 // ── Selection ──────────────────────────────
