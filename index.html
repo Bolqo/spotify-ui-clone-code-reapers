@@ -82,19 +82,46 @@
             </div>
         </aside>
         <nav class="app__nav">
+            <nav class="app__nav">
+  <div class="nav__left">
+    <!-- Hidden radio inputs -->
+    <input type="radio" name="nav-btn" id="home" checked>
+    <input type="radio" name="nav-btn" id="discover">
+    <input type="radio" name="nav-btn" id="search">
+
+    <!-- Labels as buttons -->
+    <label class="nav__btn" for="home">
+      <span class="nav__icon home"></span>Home
+    </label>
+    <label class="nav__btn" for="discover">
+      <span class="nav__icon discover"></span>Discover
+    </label>
+    <label class="nav__btn" for="search">
+      <span class="nav__icon search"></span>Search
+    </label>
+  </div>
+
+  <div class="nav__right">
+  <span class="icon notification"></span>
+  <span class="icon lock"></span>
+  <span class="icon friends"></span>
+  <span class="icon settings"></span>
+  <span class="icon avatar"></span>
+</div>
+</nav>
                 <!--This is app navigation-->
-        NAVIGATION</nav>
+        </nav>
         <div class="app__main">
             <header class="main__header">
                 <!--This is app main header-->
-            MAIN HEADER</header>
+            </header>
             <main class="main__content">
                 <!--This is app main content-->
-            MAIN CONTENT</main>
+            </main>
         </div>
         <footer class="app__player">
                 <!--This is app player-->
-        PLAYER</footer>
+        </footer>
     </div>
 </body>
 </html>
