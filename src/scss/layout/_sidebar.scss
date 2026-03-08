@@ -1,15 +1,15 @@
 @use '../abstracts/variables' as *;
+@use '../base/reset';
 
 .sidebar__wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
     background-color: $color-bg-elevated;
-    padding: 1.6rem 0;
-    overflow-y: auto;
+    padding: 1.6rem;
 }
 
-// ── Header ─────────────────────────────────
+// -- Header --
 .sidebar__header {
     display: flex;
     align-items: center;
@@ -29,13 +29,13 @@
     color: $color-text;
 }
 
-// ── Nav List ───────────────────────────────
+// -- Nav List --
 .sidebar__list {
     display: flex;
     flex-direction: column;
 }
 
-// ── Item ───────────────────────────────────
+// -- Item --
 .sidebar__item {
     display: flex;
     align-items: center;
@@ -44,25 +44,26 @@
 
     &:hover {
         background-color: $color-bg-card;
+        border-radius: 10px;
     }
 }
 
-// ── Link ───────────────────────────────────
+// -- Link --
 .sidebar__link {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 2rem;
     flex: 1;
 }
 
-// ── Icon ───────────────────────────────────
+// -- Icon --
 .sidebar__icon {
     width: 2rem;
     height: 2rem;
     flex-shrink: 0;
 }
 
-// ── Label ──────────────────────────────────
+// -- Label --
 .sidebar__label {
     font-size: $text-base;
     font-weight: $font-medium;
@@ -73,9 +74,19 @@
     }
 }
 
-// ── Arrow ──────────────────────────────────
+// -- Arrow --
 .sidebar__arrow {
     width: 1.4rem;
     height: 1.4rem;
     flex-shrink: 0;
+}
+
+//-- Active -- (add 'sidebar__item--active' to the current page's <li> element);
+.sidebar__item--active {
+    background-color: $color-bg-card;
+    border-radius: 10px;
+
+    .sidebar__label {
+        color: $color-text;
+    }
 }
