@@ -1,0 +1,83 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.main__header {
+    padding: 1.6rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.filters {
+    display: flex;
+    gap: 0.8rem;
+
+    &__btn {
+        padding: 0.6rem 1.6rem;
+        border-radius: 0.8rem;
+        border: none;
+        background: rgba($dark-grey, 0.5);
+        color: $color-text;
+        font-size: $text-sm;
+        cursor: pointer;
+
+        &--active {
+            background: $white;
+            color: $black;
+            font-weight: $font-bold;
+        }
+    }
+}
+
+
+
+.section {
+    margin-bottom: 1.5rem;
+    padding-left: 2.5rem;
+
+    &__title {
+        font-size: $text-lg;
+        font-weight: $font-bold;
+        color: $color-text;
+        margin-bottom: 1.6rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        gap: 1.6rem;
+    }
+}
+
+.card {
+    border-radius: 8px;
+    padding: 1.6rem;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.3s ease;
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &:hover { background: $bg-card-hover; }
+
+    &__img {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 1.2rem;
+    }
+
+    &__title {
+        font-size: $text-base;
+        font-weight: $font-bold;
+        color: $color-text;
+        @include truncate;
+    }
+
+    &__sub {
+        font-size: $text-sm;
+        color: $color-text-muted;
+        margin-top: 0.4rem;
+    }
+}
