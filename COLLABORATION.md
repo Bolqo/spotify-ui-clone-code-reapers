@@ -8,7 +8,7 @@
 | # | Name | GitHub |
 |---|------|--------|
 | 1 | Irakli Bolkvadze | Bolqo |
-| 2 | Luka Qobuladze | - |
+| 2 | Luka Qobuladze (until 10.03.2026) | Qristine Mirzoiani (since 11.03.2026)
 | 3 | Enrike Bedinadze | - |
 
 **Repo:** https://github.com/Bolqo/spotify-ui-clone-code-reapers
@@ -43,8 +43,8 @@
 ## Team Split
 
 ### Irakli Bolkvadze
-**Pages:** Home (1 & 2), My Library, Liked Songs
-**Shared:** Left Sidebar + shared SCSS setup (variables, reset, mixins)
+**Pages:** Main structure (all html pages, scss files and assets), Home Page...
+**Shared:** Left Sidebar + shared SCSS setup 
 
 **SCSS files:**
 ```
@@ -59,44 +59,32 @@ scss/pages/_library.scss
 scss/pages/_liked-songs.scss
 ```
 
-**HTML files:** `index.html`, `library.html`, `liked-songs.html`
+**HTML files:** `index.html`, `home.html`,
 
 ---
 
-### Luka Qobuladze
-**Pages:** Artist (all tabs 9-12), Album Page, Playlist Page
-**Shared:** Top Navigation Bar
+### Qristine Mirzoiani
+**Pages:** Library
 
 **SCSS files:**
 ```
-scss/layout/_topnav.scss
-scss/components/_tracklist.scss
-scss/pages/_artist.scss
-scss/pages/_album.scss
-scss/pages/_playlist.scss
+scss/pages/_library.scss
 ```
 
-**HTML files:** `artist.html`, `album.html`, `playlist.html`
-
+**HTML files:** `library.html`
 ---
 
 ### Enrike Bedinadze
-**Pages:** Search/Discover, Track Detail, Podcast Show, Podcast Episode, Discover (15 & 16)
-**Shared:** Bottom Player Bar + ALL Responsiveness
+**Pages:** Any page 
+**Shared:** Bottom Player Bar
 
 **SCSS files:**
 ```
 scss/layout/_player.scss
-scss/layout/_friends-panel.scss
-scss/components/_player-controls.scss
-scss/components/_responsive.scss
-scss/pages/_search.scss
-scss/pages/_track.scss
-scss/pages/_podcast.scss
-scss/pages/_discover.scss
+scss/pages/...
 ```
 
-**HTML files:** `search.html`, `track.html`, `podcast-show.html`, `podcast-episode.html`, `discover.html`
+**HTML files:** all html pages
 
 ---
 
@@ -152,8 +140,10 @@ $breakpoint-desktop: 1024px;
 
 | Person | Branch |
 |--------|--------|
-| Irakli | `feature/irakli-home-library` |
-| Luka | `feature/luka-artist-album-playlist` |
+| Irakli | `irakli-sidebar` |
+| Irakli | `irakli-navigation` |
+| Irakli | `irakli-home-page` |
+| Qristine | `qristqristi-library` |
 | Enrike | `feature/enrike-search-podcast-player` |
 
 ---
@@ -261,11 +251,3 @@ Irakli manages all assets (images, icons, fonts) in `src/assets/`.
 
 ---
 
-## Keywords Reference
-
-| Keyword | Context |
-|---------|---------|
-| **"spotify project"** | Repo, team, work split overview |
-| **"split plan"** | Detailed per-person file and page assignments |
-| **"spotify progress"** | Current progress: collaborators invited, base setup pending |
-| **"keywords"** | This keyword table |
