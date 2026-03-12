@@ -46,17 +46,24 @@ $text-3xl:  4.8rem;
 // library-main-color
 
 // primary colors
-$color-primary: #1ed760;
+$color-primary: #1ed760, ;
 $color-primary-dark: #0c391c;
 $bg-main: #121212;
-$bg-card: #181818;
+$bg-card: #181818, ;
 $bg-card-hover: #282828;
 $bg-card-note:#898989;
+$bg-card-back:#A691744D,#7373734D,#1ED7604D,#3D3D3D,#BBB4D84D,#75A4964D,
+#6278B14D,#95E6D34D,#F4B8BD4D,#C3E7B74D,#CCF6654D,#F9E72C4D,#9BF0E24D;
 
 
 
 // text colors
-$text-white: #FFFFFF;
-$text-black: #000000;
-$text-gray: #B3B3B3;
+$title-text-color:#E0E0E0;
+$p-text:#898989;
 $text-dim: #A7A7A7;
+
+// nums color
+
+$color-card-num:(#1ED760, 
+#898989, #95E6D3, #F4B8BD, #C3E7B7, #CCF665, #F9E72C,#9BF0E2);
+

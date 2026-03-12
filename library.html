@@ -145,13 +145,12 @@
             </div>
         </nav>
 
-        <!--This is app main header-->
+<!--This is app main header-->
 
-        <header class="main__header">
-
-            <nav class="head-btn">
-                <ul class="head-btn__list">
-
+<header class="main-header">
+    <nav class="head-btn">
+        <ul class="head-btn-list">
+            <div class="right-head">
                     <li>
                         <button class="btn" title="list">
                             <img src="src/assets/icons/icon-list.svg" alt="list">
@@ -166,233 +165,313 @@
 
                     <li>
                         <button class="btn" title="sort">
+                            <p>Recent</p>
                             <img src="src/assets/icons/icons sort.svg" alt="sort">
                         </button>
                     </li>
 
                     <li>
                         <button class="btn" title="filter">
+                            <p>Group</p>
                             <img src="src/assets/icons/icons-filter.svg" alt="filter">
                         </button>
                     </li>
+            </div>
 
+                <!-- search icon -->
                     <li>
                         <a href="#" class="nav__search" title="search">
                             <img src="src/assets/icons/icon-search.svg" alt="search">
                         </a>
                     </li>
 
+            <!-- left-head side -->
+                <div class="left-head">
                     <li>
                         <button class="btn" title="add">
                             <img src="src/assets/icons/Frame-plus.svg" alt="add">
                         </button>
                     </li>
-                </ul>
+                </div>
+        </ul>
+    </nav>
+</header>
 
-            </nav>
-        </header>
-
-        <!-- main card content -->
-        <main class="main__content">
+<!-- main card content -->
+    <main class="main-content">
             <section class="grid-card">
-
+<!-- card 1 -->
                 <article class="album-cards">
-                    
-                    <img src="src/assets/images/card-heart.jpg" alt="Liked songs" class="liked-song__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                    <div class="img-card">
+                        <img src="src/assets/images/card-heart.jpg" alt="Liked songs" class="liked-song__img">
+                        <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <h5>Liked Songs</h5>
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                                stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="title-row">
+                        <h5>Liked Songs</h5>
+                        <span class="num-green">8</span>
+                    </div>
                     <p>Numb, Crawling, In the End, and more</p>
                 </article>
+<!-- card 2 -->
 
                 <article class="album-cards">
+                    <div class="img-card">
                     <img src="src/assets/images/card-bowie.jpg" alt="card-bowie" class="bowie__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                    </div>
                     <h5>David Bowie</h5>
                 </article>
 
+<!-- card 3 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-pank.jpg" alt="card-pank" class="pank__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
                     <h5>Daft Punk</h5>
                 </article>
-
+<!-- card 4 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
+                <div class="title-row">
                     <h5>Chill Stuff</h5>
+                    <span class="num-grey">152</span>
+                </div> 
                     <p>Simon and Garfunkel, Daft Punk, and more</p>
                 </article>
-
+<!-- card 5 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
+                <div class="title-row">
                     <h5>The Jux Box</h5>
+                    <span class="num-grey">50</span>
+                </div>
                     <p>Simon and Garfunkel, Daft Punk, and more</p>
                 </article>
-
+<!-- card 6 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
+                <div class="title-row">
                     <h5>Vibe</h5>
+                    <span class="num-grey">30</span>
+                </div>
                     <p>Blue Skies, No Heaven</p>
                 </article>
-
+<!-- card 7 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1db954" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
+                <div class="title-row">
                     <h5>Selected Linkin Park</h5>
+                    <span class="num-grey">8</span>
+                </div>   
                     <p>Numb, Crawling, In the End, and more</p>
                 </article>
-
+<!-- card 8 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-folder.jpg" alt="card-folder" class="folder__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
+                <div class="title-row">
                     <h5>Fav bands</h5>
+                    <span class="num-grey">6</span>
+                </div>    
                     <p>Linkin Park, Muse, and more</p>
                 </article>
-
+<!-- card 9 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-meteora.jpg" alt="card-meteora" class="meteora__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
+                <!-- without num -->
                     <h5>Meteora</h5>
                     <p>Linkin Park</p>
-
                 </article>
-
+<!-- card 10 -->
                 <article class="album-cards">
+                <div class="img-card">
                     <img src="src/assets/images/card-daft2.jpg" alt="card-daft" class="daft2__img">
-                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="transparent"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
                             9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
                             11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
                             8.58914M18.678 8.58914L11.9776 15.2895C11.8545
                             15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
-                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956"
+                            stroke="#1ED760" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                </div>
+                <div class="title-row">
                     <h5>Random Access Memories</h5>
+                    <span class="num-grey">13</span>
+                </div>    
                     <p>Daft Punk</p>
                 </article>
-
+<!-- card 11 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-beatls.jpg" alt="card-beatls" class="beatls__img">
+                <div class="title-row">
                     <h5>Abbey Road</h5>
+                    <span class="num-grey">13</span>
+                </div>    
                     <p>The Beatles</p>
                 </article>
-
+<!-- card 12 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-muse.jpg" alt="card-muse" class="muse__img">
+                <div class="title-row">
                     <h5>Black Holes and Revelations</h5>
+                    <span class="num-grey">13</span>
+                </div>    
                     <p>Muse</p>
-
                 </article>
-
+<!-- card 13 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-linked.jpg" alt="card-linked" class="linked__img">
+                <div class="title-row">
                     <h5>Daily Mix 1</h5>
-                    <p>Linkin Park, System Of A Down, Coal Chamber...</p>
-
+                    <span class="num-light-blue">50</span>
+                </div>    
+“                    <p>Linkin Park, System Of A Down, Coal Chamber...</p>
                 </article>
-
+<!-- card 14 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-avril.jpg" alt="card-avril" class="avril__img">
+                <div class="title-row">
                     <h5>Daily Mix 2</h5>
+                    <span class="num-light-pink">50</span>
+                </div>    
                     <p>Avril Lavigne, Lorde, Charli XCX and more</p>
                 </article>
-
+<!-- card 15 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-martin.jpg" alt="card-martin" class="martin__img">
+                <div class="title-row">
                     <h5>Daily Mix 3</h5>
+                    <span class="num-white">50</span>
+                </div>    
                     <p>The Strokes, Martin Garrix, MGMT and more</p>
                 </article>
-
+<!-- card 16 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-rock.jpg" alt="card-rock" class="rock__img">
+                <div class="title-row">
                     <h5>Rock Mix</h5>
+                    <span class="num-lighte-yellow">50</span>
+                </div>    
                     <p>Red Hot Chili Peppers, R.E.M., Guns N Roses...</p>
                 </article>
-
+<!-- card 17 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-chill.jpg" alt="card-chill" class="chill__img">
+                <div class="title-row">
                     <h5>Chill Mix</h5>
+                    <span class="num-yellow">50</span>
+                </div>    
                     <p>MF DOOM, Daft Punk, The Chainsmokers, and more</p>
                 </article>
-
+<!-- card 18 -->
                 <article class="album-cards">
                     <img src="src/assets/images/card-pop.jpg" alt="card-pop" class="pop__img">
+                <div class="title-row">
                     <h5>Pop Mix</h5>
+                    <span class="num-pop-blue">50</span>
+                </div>    
                     <p>Red Hot Chili Peppers, R.E.M., Guns N Roses...</p>
                 </article>
 
