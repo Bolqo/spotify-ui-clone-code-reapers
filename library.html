@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/main.css">
 </head>
+
 <body>
     <div class="app">
         <aside class="app__sidebar">
@@ -15,7 +17,8 @@
                 <!-- Sidebar Header -->
                 <div class="sidebar__header">
                     <a href="./library.html" class="sidebar__link">
-                        <img src="src/assets/icons/library (active).svg" alt="Library icon" class="sidebar__header-icon">
+                        <img src="src/assets/icons/library (active).svg" alt="Library icon"
+                            class="sidebar__header-icon">
                         <span class="sidebar__header-title">My Library</span>
                     </a>
                 </div>
@@ -39,7 +42,8 @@
                         </li>
                         <li class="sidebar__item">
                             <a href="liked-songs.html" class="sidebar__link">
-                                <img src="src/assets/icons/liked_songs (heart).svg" alt="Liked songs" class="sidebar__icon">
+                                <img src="src/assets/icons/liked_songs (heart).svg" alt="Liked songs"
+                                    class="sidebar__icon">
                                 <span class="sidebar__label">Liked songs</span>
                             </a>
                         </li>
@@ -140,17 +144,268 @@
                 </ul>
             </div>
         </nav>
+
         <!--This is app main header-->
-        <div class="app__main">
-            <header class="main__header">
-            </header>
-            <main class="main__content">
-                <!--This is app main content-->
-            </main>
-        </div>
+
+        <header class="main__header">
+
+            <nav class="head-btn">
+                <ul class="head-btn__list">
+
+                    <li>
+                        <button class="btn" title="list">
+                            <img src="src/assets/icons/icon-list.svg" alt="list">
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="btn" title="grid">
+                            <img src="src/assets/icons/icons grid.svg" alt="grid">
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="btn" title="sort">
+                            <img src="src/assets/icons/icons sort.svg" alt="sort">
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="btn" title="filter">
+                            <img src="src/assets/icons/icons-filter.svg" alt="filter">
+                        </button>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav__search" title="search">
+                            <img src="src/assets/icons/icon-search.svg" alt="search">
+                        </a>
+                    </li>
+
+                    <li>
+                        <button class="btn" title="add">
+                            <img src="src/assets/icons/Frame-plus.svg" alt="add">
+                        </button>
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+
+        <!-- main card content -->
+        <main class="main__content">
+            <section class="grid-card">
+
+                <article class="album-cards">
+                    
+                    <img src="src/assets/images/card-heart.jpg" alt="Liked songs" class="liked-song__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Liked Songs</h5>
+                    <p>Numb, Crawling, In the End, and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-bowie.jpg" alt="card-bowie" class="bowie__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>David Bowie</h5>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-pank.jpg" alt="card-pank" class="pank__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Daft Punk</h5>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Chill Stuff</h5>
+                    <p>Simon and Garfunkel, Daft Punk, and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>The Jux Box</h5>
+                    <p>Simon and Garfunkel, Daft Punk, and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Vibe</h5>
+                    <p>Blue Skies, No Heaven</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-note.jpg" alt="card-note" class="note__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Selected Linkin Park</h5>
+                    <p>Numb, Crawling, In the End, and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-folder.jpg" alt="card-folder" class="folder__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Fav bands</h5>
+                    <p>Linkin Park, Muse, and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-meteora.jpg" alt="card-meteora" class="meteora__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Meteora</h5>
+                    <p>Linkin Park</p>
+
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-daft2.jpg" alt="card-daft" class="daft2__img">
+                    <svg class="pin__icon" width="22" height="22" viewBox="0 0 22 22" fill="#1ed760" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6066 2.5178L11.0888 0.999964M12.6066 2.5178L5.90624 9.21819C5.78313 9.3413 5.62232 9.41961 5.44949
+                            9.44062L2.6962 9.77532C2.0516 9.85367 1.7803 10.6401 2.23945 
+                            11.0992L6.168 15.0278M12.6066 2.5178L18.678 8.58914M20.1958 10.107L18.678 
+                            8.58914M18.678 8.58914L11.9776 15.2895C11.8545
+                            15.4126 11.7762 15.5734 11.7551 15.7463L11.4204 18.4996C11.3421 
+                            19.1442 10.5557 19.4155 10.0966 18.9563L6.168 15.0278M6.168 15.0278L1.00021 20.1956" stroke="#1ED760" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5>Random Access Memories</h5>
+                    <p>Daft Punk</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-beatls.jpg" alt="card-beatls" class="beatls__img">
+                    <h5>Abbey Road</h5>
+                    <p>The Beatles</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-muse.jpg" alt="card-muse" class="muse__img">
+                    <h5>Black Holes and Revelations</h5>
+                    <p>Muse</p>
+
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-linked.jpg" alt="card-linked" class="linked__img">
+                    <h5>Daily Mix 1</h5>
+                    <p>Linkin Park, System Of A Down, Coal Chamber...</p>
+
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-avril.jpg" alt="card-avril" class="avril__img">
+                    <h5>Daily Mix 2</h5>
+                    <p>Avril Lavigne, Lorde, Charli XCX and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-martin.jpg" alt="card-martin" class="martin__img">
+                    <h5>Daily Mix 3</h5>
+                    <p>The Strokes, Martin Garrix, MGMT and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-rock.jpg" alt="card-rock" class="rock__img">
+                    <h5>Rock Mix</h5>
+                    <p>Red Hot Chili Peppers, R.E.M., Guns N Roses...</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-chill.jpg" alt="card-chill" class="chill__img">
+                    <h5>Chill Mix</h5>
+                    <p>MF DOOM, Daft Punk, The Chainsmokers, and more</p>
+                </article>
+
+                <article class="album-cards">
+                    <img src="src/assets/images/card-pop.jpg" alt="card-pop" class="pop__img">
+                    <h5>Pop Mix</h5>
+                    <p>Red Hot Chili Peppers, R.E.M., Guns N Roses...</p>
+                </article>
+
+
+            </section>
+        </main>
+
+
+
         <footer class="app__player">
-                <!--This is app player-->
+            <!--This is app player-->
         </footer>
     </div>
 </body>
+
 </html>

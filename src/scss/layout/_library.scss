@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+@use '../base/reset';
+
+.main_header {
+    display: flex;
+    align-items: center;
+    // flex-direction: row;
+    justify-content: space-between;
+    background-color: $color-bg-elevated;
+    // width: calc(100% -259px);
+}
+
+.head-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+}
