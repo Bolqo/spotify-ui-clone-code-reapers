@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as *;
+@use '../base/reset';
+
+
+// head section
+.main-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $color-bg-elevated;
+    width: 100%;
+    height: 62px;
+}
+
+.head-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+// library main seqtion
+
+.main-content{
+    width: 100%;
+    height: 780px;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+
+}
