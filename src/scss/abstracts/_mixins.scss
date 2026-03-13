@@ -53,3 +53,18 @@
 @mixin desktop {
   @media (max-width: 1024px) { @content; }
 }
+// icons min-head world
+@mixin icons-size{
+  width: $icon-widht-size;
+  height: $icon-heght-size;
+  radius: $icon-radius;
+}
+
+@mixin icon-font {
+  color: $p-text;
+  font-family: $font-primary;
+  font-size: $icon-font-size;
+  font-weight: $icon-font-weight;
+  height: $line-height-base;
+  spacing: $letter-spacing;
+}

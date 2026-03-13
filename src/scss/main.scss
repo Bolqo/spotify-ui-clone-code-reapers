@@ -22,7 +22,7 @@
 
 // Pages
 @use 'pages/home';
-@use 'pages/library';
+@use "layout/library";
 @use 'pages/liked-songs';
 @use 'pages/artists';
 @use 'pages/album';
@@ -31,3 +31,4 @@
 @use 'pages/track';
 @use 'pages/podcast';
 @use 'pages/discover';
+
