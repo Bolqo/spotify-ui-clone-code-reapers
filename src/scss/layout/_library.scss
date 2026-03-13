@@ -1,31 +1,107 @@
-@use '../abstracts/variables' as *;
-@use '../base/reset';
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/reset";
 
+
+// main-library-wrapper
+
+.library-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-main;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #202020; 
+    border-radius: 8px;
+    overflow: auto;
+}
 
 // head section
 .main-header {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: $color-bg-elevated;
-    width: 100%;
-    height: 62px;
+display: flex;
+background-color: $bg-main;
+align-items: center;
+flex-direction: row;
+justify-content: space-between;
+width: 100%;
+height: 100%;
+
 }
 
-.head-btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.2rem;
+.head-btn-list {
+display: flex;
+align-items: center;
+flex-direction: row;
+width: 100%;
+// justify-content: space-between;
+padding: 0;
+margin-top: 0;
+gap: 39px;
+    li {
+    list-style: none;
+    text-decoration: none;
+    }
+
 }
+.btn {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    img {
+        @include icons-size;
+    }
+    p{
+        @include icon-font;
+    }
+    a img{ @include icons-size;}
+
+}
+.left-btn {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+
+
+    img {
+    @include icons-size;
+    }
+}
+
 
 // library main seqtion
 
-.main-content{
+.main-grid-card {
     width: 100%;
-    height: 780px;
-    display:grid;
-    grid-template-columns: repeat(auto-fill, 180px);
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 120px);
+    gap:11px;
 
+}
+
+.img-card {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 100%;
+    height: 100%;
+    
+
+    img {
+    width: 170px;
+    height: 160px;
+    // object-fit: cover;
+    border-radius: 12px;
+    }
+
+    .pin__icon {
+    position: absolute;
+    top: 0;
+    right: 2px; 
+   }
 }

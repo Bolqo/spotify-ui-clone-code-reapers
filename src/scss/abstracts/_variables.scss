@@ -48,7 +48,7 @@ $text-3xl:  4.8rem;
 // primary colors
 $color-primary: #1ed760, ;
 $color-primary-dark: #0c391c;
-$bg-main: #121212;
+$bg-main:#060606;
 $bg-card: #181818, ;
 $bg-card-hover: #282828;
 $bg-card-note:#898989;
@@ -66,4 +66,20 @@ $text-dim: #A7A7A7;
 
 $color-card-num:(#1ED760, 
 #898989, #95E6D3, #F4B8BD, #C3E7B7, #CCF665, #F9E72C,#9BF0E2);
+
+// icons size
+
+$icon-heght-size: 40px;
+$icon-widht-size: 40px;
+$icon-radius: 5px;
+
+// icon font size
+
+$icon-font-size: 14px;
+$icon-font-weight: 400;
+// Line heights
+$line-height-base: 100%;
+// Letter spacing
+$letter-spacing: 3%;
+
 
