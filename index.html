@@ -149,145 +149,207 @@
                     <button class="filters__btn">Podcasts</button>
                     <button class="filters__btn">Audiobooks</button>
                 </div>
-             </header>
+                <button class="sort-btn" aria-label="Filter">
+                    <img src="src/assets/icons/sort.svg" alt="" class="sort-icon">
+                </button>
+            </header>
             <!--This is app main content-->
             <main class="main__content">
                 <!-- Made For You -->
                 <section class="section">
+                <div class="section__header">
                     <h2 class="section__title">Made For You</h2>
-                    <div class="section__grid">
-                        <div class="card" data-category="music">
-                            <img src="src/assets/images/Card_Discover.svg" alt="card_discover" class="card__img">
-                            <p class="card__title">Discover Weekly</p>
-                            <p class="card__sub">Your weekly mixtape of fresh music.</p>
-                        </div>
-                        <div class="card" data-category="music">
-                            <img src="src/assets/images/Card_Daily_Mix_1.svg" alt="card_daily-mix_1" class="card__img">
-                            <p class="card__title">Daily Mix 1</p>
-                            <p class="card__sub">Linkin Park, System Of A Down, Coal Chamber...</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_2.svg" alt="card_daily_mix_2" class="card__img">
-                            <p class="card__title">Daily Mix 2</p>
-                            <p class="card__sub">Avril Lavigne, Lorde, Charli XCX and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_3.svg" alt="card_daily_mix_3" class="card__img">
-                            <p class="card__title">Daily Mix 3</p>
-                            <p class="card__sub">The Strokes, Martin Garrix, MGMT and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_4.svg" alt="card_daily_mix_4" class="card__img">
-                            <p class="card__title">Daily Mix 4</p>
-                            <p class="card__sub">Chuck Berry, Elvis Presley, Roy Orbison and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_6.svg" alt="card_daily_mix_6" class="card__img">
-                            <p class="card__title">Daily Mix 6</p>
-                            <p class="card__sub">Frank Sinatra, Gerhard Trede, Dean Martin and more</p>
-                        </div>
-                          <div class="card">
-                            <img src="src/assets/images/Card_Nirvana_Radio.svg" alt="card_nirvana_radio" class="card__img">
-                            <p class="card__title">Nirvana Radio</p>
-                            <p class="card__sub">The Strokes, Martin Garrix, MGMT and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Fall_Out_Boy.svg" alt="card_fall_out_boy" class="card__img">
-                            <p class="card__title">Fall Out Boy</p>
-                            <p class="card__sub">With Panic! At The Disco, The All-American Rejects,...</p>
-                        </div>
-
+                    <div class="section__controls">
+                    <button class="section__arrow section__arrow--prev" aria-label="Scroll left">&#8592;</button>
+                    <button class="section__arrow section__arrow--next" aria-label="Scroll right">&#8594;</button>
+                    <button class="section__more" aria-label="More options">&#8943;</button>
                     </div>
-                </section>
-                <!-- Top Mixes -->
-                <section class="section">
-                    <h2 class="section__title">Top Mixes</h2>
+                </div>
+                <div class="section__track">
                     <div class="section__grid">
-                         <div class="card" data-category="music">
-                            <img src="src/assets/images/Card_Discover.svg" alt="card_discover" class="card__img">
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__mauve-short"></div>
+                                <div class="card__img-wrap__top-wide card__mauve-wide"></div>
+                                <img src="src/assets/images/label_Discover_Weekly.png" alt="card_discover" class="card__img">
+                            </div>
                             <p class="card__title">Discover Weekly</p>
                             <p class="card__sub">Your weekly mixtape of fresh music.</p>
                         </div>
                         <div class="card" data-category="music">
-                            <img src="src/assets/images/Card_Daily_Mix_1.svg" alt="card_daily-mix_1" class="card__img">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__mint-short"></div>
+                                <div class="card__img-wrap__top-wide card__mint-wide"></div>
+                                <img src="src/assets/images/label_Daily_Mix_1.png" alt="card_daily-mix_1" class="card__img">
+                            </div>
                             <p class="card__title">Daily Mix 1</p>
                             <p class="card__sub">Linkin Park, System Of A Down, Coal Chamber...</p>
                         </div>
                         <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_2.svg" alt="card_daily_mix_2" class="card__img">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__blush-short"></div>
+                                <div class="card__img-wrap__top-wide card__blush-wide"></div>
+                                <img src="src/assets/images/label_Daily_Mix_2.png" alt="card_daily_mix_2" class="card__img">
+                            </div>
                             <p class="card__title">Daily Mix 2</p>
                             <p class="card__sub">Avril Lavigne, Lorde, Charli XCX and more</p>
                         </div>
                         <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_3.svg" alt="card_daily_mix_3" class="card__img">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__sage-short"></div>
+                                <div class="card__img-wrap__top-wide card__sage-wide"></div>
+                                <img src="src/assets/images/card-martin.jpg" alt="card_daily_mix_3" class="card__img">
+                            </div>
                             <p class="card__title">Daily Mix 3</p>
                             <p class="card__sub">The Strokes, Martin Garrix, MGMT and more</p>
                         </div>
                         <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_4.svg" alt="card_daily_mix_4" class="card__img">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__coral-short"></div>
+                                <div class="card__img-wrap__top-wide card__coral-wide"></div>
+                                <img src="src/assets/images/daily_mix_4.png" alt="card_daily_mix_4" class="card__img">
+                            </div>
                             <p class="card__title">Daily Mix 4</p>
                             <p class="card__sub">Chuck Berry, Elvis Presley, Roy Orbison and more</p>
                         </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_6.svg" alt="card_daily_mix_6" class="card__img">
+                        <div class="card" data-category="music">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__steel-short"></div>
+                                <div class="card__img-wrap__top-wide card__steel-wide"></div>
+                                <img src="src/assets/images/daily_mix_6.png" alt="card_daily_mix_6" class="card__img">
+                            </div>
                             <p class="card__title">Daily Mix 6</p>
                             <p class="card__sub">Frank Sinatra, Gerhard Trede, Dean Martin and more</p>
                         </div>
-                          <div class="card">
-                            <img src="src/assets/images/Card_Nirvana_Radio.svg" alt="card_nirvana_radio" class="card__img">
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__gold-short"></div>
+                                <div class="card__img-wrap__top-wide card__gold-wide"></div>
+                                <img src="src/assets/images/nirvana.png" alt="card_nirvana_radio" class="card__img">
+                            </div>
                             <p class="card__title">Nirvana Radio</p>
                             <p class="card__sub">The Strokes, Martin Garrix, MGMT and more</p>
                         </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Fall_Out_Boy.svg" alt="card_fall_out_boy" class="card__img">
+                        <div class="card" data-category="music">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__taupe-short"></div>
+                                <div class="card__img-wrap__top-wide card__taupe-wide"></div>
+                                <img src="src/assets/images/fall_out_boy.png" alt="card_fall_out_boy" class="card__img">
+                            </div>
                             <p class="card__title">Fall Out Boy</p>
                             <p class="card__sub">With Panic! At The Disco, The All-American Rejects,...</p>
                         </div>
                     </div>
                 </section>
-                <!-- Favorite Artists -->
+                <!-- Your top mixes -->
                 <section class="section">
-                    <h2 class="section__title">Favorite Artists</h2>
+                <div class="section__header">
+                    <h2 class="section__title">Your top mixes</h2>
+                    <div class="section__controls">
+                    <button class="section__arrow section__arrow--prev" aria-label="Scroll left">&#8592;</button>
+                    <button class="section__arrow section__arrow--next" aria-label="Scroll right">&#8594;</button>
+                    <button class="section__more" aria-label="More options">&#8943;</button>
+                    </div>
+                </div>
+                <div class="section__track">
+                    <div class="section__grid">
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__lime-short"></div>
+                                <div class="card__img-wrap__top-wide card__lime-wide"></div>
+                                <img src="src/assets/images/card-rock.jpg" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">Rock Mix</p>
+                            <p class="card__sub">Red Hot Chili Peppers, R.E.M., Guns N’ Roses...</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__yellow-short"></div>
+                                <div class="card__img-wrap__top-wide card__yellow-wide"></div>
+                                <img src="src/assets/images/card-chill.jpg" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">Chill Mix</p>
+                            <p class="card__sub">MF DOOM, Daft Punk, The Chainsmokers, and more</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__teal-short"></div>
+                                <div class="card__img-wrap__top-wide card__teal-wide"></div>
+                                <img src="src/assets/images/card-pop.jpg" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">Pop Mix</p>
+                            <p class="card__sub">Red Hot Chili Peppers, R.E.M., Guns N’ Roses...</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__blue-short"></div>
+                                <div class="card__img-wrap__top-wide card__blue-wide"></div>
+                                <img src="src/assets/images/Daft_Punk_Mix.png" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">Daft Punk Mix</p>
+                            <p class="card__sub">Daft Punk, MGMT, Muse, and more</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__rose-short"></div>
+                                <div class="card__img-wrap__top-wide card__rose-wide"></div>
+                                <img src="src/assets/images/Happy_Mix.png" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">Happy Mix</p>
+                            <p class="card__sub">The Turtles, Van Morrison, ABBA and more</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__blue-short"></div>
+                                <div class="card__img-wrap__top-wide card__blue-wide"></div>
+                                <img src="src/assets/images/David_Bowie.png" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">David Bowie Mix</p>
+                            <p class="card__sub">Soft Cell, The Who and The Clash</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__forest-short"></div>
+                                <div class="card__img-wrap__top-wide card__forest-wide"></div>
+                                <img src="src/assets/images/Upbeat_Mix.png" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">Upbeat Mix</p>
+                            <p class="card__sub">Kylie Minogue, Charli XCX, Cage The Elephant and...</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__img-wrap">
+                                <div class="card__img-wrap__top-short card__pink-short"></div>
+                                <div class="card__img-wrap__top-wide card__pink-wide"></div>
+                                <img src="src/assets/images/60s.png" alt="card_daily_mix_4" class="card__img">
+                                </div>
+                            <p class="card__title">60s Mix</p>
+                            <p class="card__sub">Chuck Berry, Skeeter David, Van Morrison and...</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Your favorite artists -->
+                <section class="section">
+                <div class="section__header">
+                    <h2 class="section__title">Your favorite artists</h2>
+                    <div class="section__controls">
+                    <button class="section__arrow section__arrow--prev" aria-label="Scroll left">&#8592;</button>
+                    <button class="section__arrow section__arrow--next" aria-label="Scroll right">&#8594;</button>
+                    <button class="section__more" aria-label="More options">&#8943;</button>
+                    </div>
+                </div>
+                <div class="section__track">
                     <div class="section__grid">
                         <div class="card" data-category="music">
-                            <img src="src/assets/images/Card_Discover.svg" alt="card_discover" class="card__img">
-                            <p class="card__title">Discover Weekly</p>
-                            <p class="card__sub">Your weekly mixtape of fresh music.</p>
+                            <img src="src/assets/images/fav_art_1.png" alt="card_discover" class="card__img_round">
+                            <p class="card__title">Guns N’ Roses</p>
                         </div>
                         <div class="card" data-category="music">
-                            <img src="src/assets/images/Card_Daily_Mix_1.svg" alt="card_daily-mix_1" class="card__img">
-                            <p class="card__title">Daily Mix 1</p>
-                            <p class="card__sub">Linkin Park, System Of A Down, Coal Chamber...</p>
+                            <img src="src/assets/images/fav_art_2.png" alt="card_daily-mix_1" class="card__img_round">
+                            <p class="card__title">Daft Punk</p>
                         </div>
                         <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_2.svg" alt="card_daily_mix_2" class="card__img">
-                            <p class="card__title">Daily Mix 2</p>
-                            <p class="card__sub">Avril Lavigne, Lorde, Charli XCX and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_3.svg" alt="card_daily_mix_3" class="card__img">
-                            <p class="card__title">Daily Mix 3</p>
-                            <p class="card__sub">The Strokes, Martin Garrix, MGMT and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_4.svg" alt="card_daily_mix_4" class="card__img">
-                            <p class="card__title">Daily Mix 4</p>
-                            <p class="card__sub">Chuck Berry, Elvis Presley, Roy Orbison and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Daily_Mix_6.svg" alt="card_daily_mix_6" class="card__img">
-                            <p class="card__title">Daily Mix 6</p>
-                            <p class="card__sub">Frank Sinatra, Gerhard Trede, Dean Martin and more</p>
-                        </div>
-                          <div class="card">
-                            <img src="src/assets/images/Card_Nirvana_Radio.svg" alt="card_nirvana_radio" class="card__img">
-                            <p class="card__title">Nirvana Radio</p>
-                            <p class="card__sub">The Strokes, Martin Garrix, MGMT and more</p>
-                        </div>
-                        <div class="card">
-                            <img src="src/assets/images/Card_Fall_Out_Boy.svg" alt="card_fall_out_boy" class="card__img">
-                            <p class="card__title">Fall Out Boy</p>
-                            <p class="card__sub">With Panic! At The Disco, The All-American Rejects,...</p>
+                            <img src="src/assets/images/fav_art_3.png" alt="card_daily_mix_2" class="card__img_round">
+                            <p class="card__title">David Bowie</p>
                         </div>
                     </div>
                 </section>

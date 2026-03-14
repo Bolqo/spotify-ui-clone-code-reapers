@@ -1,0 +1,120 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.3s ease;
+    box-sizing: content-box;
+    transition: all 0.3s ease;
+    padding-top: 1rem;
+
+    
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &:hover {
+        
+    }
+
+   &__img-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    
+        &__top-short {
+            height: 0.3rem;
+            width: 13.3rem;
+            margin-bottom: 0.1rem;
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+        }
+        
+        &__top-wide {
+            height: 0.6rem;
+            width: 15.4rem;
+            margin-bottom: 0.1rem;
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        
+        &:hover &__top-short,
+        &:hover &__top-wide {
+        transform: translateY(-8px);
+        scale: 0.95;
+        }
+        
+
+        img {
+            width: auto;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                scale: 1.00;
+                transform: translateY(-4px);
+            }
+        }
+    }
+
+    &__img_round {
+        width: 100%;
+        border-radius: 50%;
+        margin-bottom: 1.2rem;
+    }
+
+    &__title {
+        font-size: $text-base;
+        font-weight: $font-bold;
+        color: $color-text;
+        @include truncate;
+    }
+
+    &__sub {
+        font-size: $text-sm;
+        color: $color-muted;
+        margin-top: 0.4rem;
+    }
+
+    &__pink-short    { background: $pink-short; }
+    &__pink-wide     { background: $pink-wide; }
+    &__blue-short    { background: $blue-short; }
+    &__blue-wide     { background: $blue-wide; }
+    &__orange-short  { background: $orange-short; }
+    &__orange-wide   { background: $orange-wide; }
+    &__lime-short    { background: $lime-short; }
+    &__lime-wide     { background: $lime-wide; }
+    &__yellow-short  { background: $yellow-short; }
+    &__yellow-wide   { background: $yellow-wide; }
+    &__teal-short    { background: $teal-short; }
+    &__teal-wide     { background: $teal-wide; }
+    &__rose-short    { background: $rose-short; }
+    &__rose-wide     { background: $rose-wide; }
+    &__forest-short  { background: $forest-short; }
+    &__forest-wide   { background: $forest-wide; }
+    &__mauve-short   { background: $mauve-short; }
+    &__mauve-wide    { background: $mauve-wide; }
+    &__mint-short    { background: $mint-short; }
+    &__mint-wide     { background: $mint-wide; }
+    &__blush-short   { background: $blush-short; }
+    &__blush-wide    { background: $blush-wide; }
+    &__sage-short    { background: $sage-short; }
+    &__sage-wide     { background: $sage-wide; }
+    &__coral-short   { background: $coral-short; }
+    &__coral-wide    { background: $coral-wide; }
+    &__steel-short   { background: $steel-short; }
+    &__steel-wide    { background: $steel-wide; }
+    &__gold-short    { background: $gold-short; }
+    &__gold-wide     { background: $gold-wide; }
+    &__taupe-short   { background: $taupe-short; }
+    &__taupe-wide    { background: $taupe-wide; }
+}
