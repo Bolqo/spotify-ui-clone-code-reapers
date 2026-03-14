@@ -1,30 +1,88 @@
-// Colors
+//---Colors------------------------------------
+
 $green: #1ED760;
 $black: #060606;
 $light-black: #111111;
 $white: #E0E0E0;
 $light-grey: #898989;
 $dark-grey: #202020;
+$blue:#6F86FF;
+$pink:#DD138B;
+$orange: #FFC668;
+$lime: #CCF665;
+$yellow: #F9E72C;
+$teal: #9BF0E2;
+$rose: #FFCBD4;
+$forest: #27856B;
+$mauve: #CE6E9A;
+$mint: #95E6D3;
+$blush: #F4B8BD;
+$sage: #C3E7B7;
+$coral: #F37FA6;
+$steel: #A0BEC8;
+$gold: #FDD87D;
+$taupe: #D4B2A9;
 
-// ── Backgrounds ────────────────────────────
+// Card
+
+$blue-wide: rgba($blue, 0.30);
+$blue-short: rgba($blue, 0.15);
+$pink-wide: rgba($pink, 0.30);
+$pink-short: rgba($pink, 0.15);
+$orange-wide:  rgba($orange, 0.30);
+$orange-short: rgba($orange, 0.15);
+$lime-wide:    rgba($lime, 0.30);
+$lime-short:   rgba($lime, 0.15);
+$yellow-wide:  rgba($yellow, 0.30);
+$yellow-short: rgba($yellow, 0.15);
+$teal-wide:    rgba($teal, 0.30);
+$teal-short:   rgba($teal, 0.15);
+$rose-wide:    rgba($rose, 0.30);
+$rose-short:   rgba($rose, 0.15);
+$forest-wide:  rgba($forest, 0.30);
+$forest-short: rgba($forest, 0.15);
+$mauve-wide:   rgba($mauve, 0.30);
+$mauve-short:  rgba($mauve, 0.15);
+$mint-wide:    rgba($mint, 0.30);
+$mint-short:   rgba($mint, 0.15);
+$blush-wide:   rgba($blush, 0.30);
+$blush-short:  rgba($blush, 0.15);
+$sage-wide:    rgba($sage, 0.30);
+$sage-short:   rgba($sage, 0.15);
+$coral-wide:   rgba($coral, 0.30);
+$coral-short:  rgba($coral, 0.15);
+$steel-wide:   rgba($steel, 0.30);
+$steel-short:  rgba($steel, 0.15);
+$gold-wide:    rgba($gold, 0.30);
+$gold-short:   rgba($gold, 0.15);
+$taupe-wide:   rgba($taupe, 0.30);
+$taupe-short:  rgba($taupe, 0.15);
+$lime-short:   rgba($lime, 0.15);
+
+// Background
+
 $color-bg-base: $black;
 $color-bg-elevated: $light-black;
 $color-bg-card: $dark-grey;
 
-// ── Brand ──────────────────────────────────
+// Brand
+
 $color-primary: $green; 
 
-// ── Text ───────────────────────────────────
-$color-text: $white;  
-$color-text-muted: $light-grey; 
-$color-text-hover: $white;
+// Text
 
-// ── Buttons ────────────────────────────────
+$color-text: $white;  
+$color-muted: $light-grey; 
+$color-hover: $white;
+
+// Buttons
+
 $color-btn: $light-grey;
 $color-btn-hover: $white; 
 $color-btn-active: $green;
 
-// ── Typography ─────────────────────────────
+// Typography
+
 $font-primary: 'Satoshi', sans-serif;
 
 $font-light:   300;

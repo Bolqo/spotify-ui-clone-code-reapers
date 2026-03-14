@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.app__main {
+    display: grid;
+    grid-template-rows: 59px 1fr;
+    grid-template-columns: 1fr;
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+    border: 1px solid $dark-grey;
+    border-radius: 10px;
+    margin-right: 7px;
+}
+
+
+.main__content {
+    grid-row: 2;
+    overflow-y: auto;
+    min-height: 0;
+}
