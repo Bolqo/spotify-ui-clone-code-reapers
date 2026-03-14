@@ -2,106 +2,199 @@
 @use "../abstracts/mixins" as *;
 @use "../base/reset";
 
-
 // main-library-wrapper
 
 .library-wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: $bg-main;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #202020; 
-    border-radius: 8px;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-main;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #202020;
+  border-radius: 8px;
+  overflow: auto;
 }
 
 // head section
 .main-header {
-display: flex;
-background-color: $bg-main;
-align-items: center;
-flex-direction: row;
-justify-content: space-between;
-width: 100%;
-height: 100%;
-
+  display: flex;
+  background-color: $bg-main;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
 .head-btn-list {
-display: flex;
-align-items: center;
-flex-direction: row;
-width: 100%;
-// justify-content: space-between;
-padding: 0;
-margin-top: 0;
-gap: 39px;
-    li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+  gap: 39px;
+  li {
     list-style: none;
     text-decoration: none;
-    }
-
+  }
 }
 .btn {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
 
-    img {
-        @include icons-size;
-    }
-    p{
-        @include icon-font;
-    }
-    a img{ @include icons-size;}
-
+  img {
+    @include icons-size;
+  }
+  p {
+    @include icon-font;
+  }
+  a img {
+    @include icons-size;
+  }
 }
 .left-btn {
-display: flex;
-align-items: center;
-justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-
-    img {
+  img {
     @include icons-size;
-    }
+  }
 }
-
 
 // library main seqtion
 
 .main-grid-card {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 120px);
-    gap:11px;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 170px);
+  gap: 11px;
+  padding: 20px;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 25px;
 }
+
+.album-cards {
+width: 100%;
+height: 100%;
+position: relative;
+display: flex;
+flex-direction: column;
+gap: 6px;
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    }
+}
+
+// ქარდები და მისი სტიკი ეფექტები
 
 .img-card {
-    position: relative;
-    margin-top: 25px;
-    margin-left: 25px;
-    width: 100%;
-    height: 100%;
-    
+position: relative;
+width: 100%;
+height: 100%;
+z-index: 1;  
 
-    img {
-    width: 170px;
-    height: 160px;
-    // object-fit: cover;
-    border-radius: 12px;
+.round {
+    border-radius: 50%;
     }
-
-    .pin__icon {
-    position: absolute;
-    top: 0;
-    right: 2px; 
-   }
 }
+
+
+.img-card img {
+    position: relative;
+    z-index: 2;
+    border-radius: 8px; 
+    width: 100%;
+    display: block;
+}
+.stacked-effect::after,
+.stacked-effect::before {
+    content: '';
+    position: absolute;
+    border-radius: 8px 8px 0 0;
+}
+
+.stacked-effect::after {
+    top: -6px; 
+    left: 6px; 
+    right: 6px; 
+    height: 30px;
+    z-index: -1; 
+}
+
+.stacked-effect::before {
+    top: -12px; 
+    left: 12px; 
+    right: 12px; 
+    height: 30px;
+    z-index: -2;
+}
+// card 1
+.folder-green::after { background-color: #1ED7604D;}
+.folder-green::before { background-color: #1ED76026;}
+// card grey-s
+.folder-gray::after { background-color: #7373734D;}
+.folder-gray::before { background-color: #73737326;}
+// card 9
+.folder-brow::after {background-color: #A691744D;}
+
+// card 10
+.folder-iblack::after {background-color: #BBB4D84D;}
+
+// card 11
+.folder-igree::after  {background-color: #75A4964D;}
+
+// card 12
+.folder-iblue::after {background-color: #6278B14D;}
+
+// card 13
+.folder-posp::after { background-color: #95E6D34D;}
+.folder-posp::before {background-color: #95E6D326;}
+
+// card 14
+.folder-pink::after { background-color: #F4B8BD4D;}
+.folder-pink::before {background-color: #F4B8BD26;}
+
+// card 15
+.folder-ura::after { background-color: #C3E7B74D;}
+.folder-ura::before {background-color: #C3E7B726;}
+
+// card 16
+.folder-orang::after { background-color: #CCF6654D;}
+.folder-orang::before {background-color: #CCF66526;}
+
+// card 17
+.folder-yellow::after { background-color: #F9E72C4D;}
+.folder-yellow::before {background-color: #F9E72C26;}
+
+// card 18
+.folder-finish::after { background-color: #9BF0E24D;}
+.folder-finish::before {background-color: #9BF0E226;}
+
+.pin__icon {
+    position: absolute;
+    top: -10px; 
+    right: 1px; 
+    z-index: 5; 
+    background-color: #111111;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.title-row{
+
+    @include title-font;
+    
+}
+p { @include small-text;}
+
+

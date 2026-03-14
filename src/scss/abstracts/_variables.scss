@@ -52,6 +52,7 @@ $bg-main:#060606;
 $bg-card: #181818, ;
 $bg-card-hover: #282828;
 $bg-card-note:#898989;
+$bg-card-1:#1ED7604D;
 $bg-card-back:#A691744D,#7373734D,#1ED7604D,#3D3D3D,#BBB4D84D,#75A4964D,
 #6278B14D,#95E6D34D,#F4B8BD4D,#C3E7B74D,#CCF6654D,#F9E72C4D,#9BF0E24D;
 
@@ -73,10 +74,11 @@ $icon-heght-size: 40px;
 $icon-widht-size: 40px;
 $icon-radius: 5px;
 
-// icon font size
-
+// icon font size title too
+$small-font-size: 12px;
+$small-font-weigth: 400;
 $icon-font-size: 14px;
-$icon-font-weight: 400;
+$icon-font-weight: 500;
 // Line heights
 $line-height-base: 100%;
 // Letter spacing
