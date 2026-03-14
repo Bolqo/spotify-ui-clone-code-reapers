@@ -68,3 +68,23 @@
   height: $line-height-base;
   spacing: $letter-spacing;
 }
+
+// card fontes
+
+@mixin title-font{
+ font-family: $font-primary;
+ font-size: $icon-font-size;
+ font-weight: $icon-font-weight;
+ height: $line-height-base;
+ letter-spacing: $letter-spacing;
+}
+
+@mixin small-text{
+    font-family: $font-primary;
+    height: $line-height-base;
+    letter-spacing: $letter-spacing;
+    font-size: $small-font-size;
+    font-weight: $small-font-weigth;
+    color: $p-text;
+
+}
