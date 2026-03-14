@@ -69,3 +69,70 @@
         width: max-content;
     }
 }
+
+
+// ── Recently Played (mobile only) ──────────
+.recent-grid {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .recent-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        padding: 1.6rem;
+    }
+
+    .recent-item {
+        height: 4.8rem;;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-color: $color-bg-elevated;
+        border-radius: 0.6rem;
+        overflow: hidden;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $color-bg-card;
+        }
+
+
+        &__img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 0.3rem;
+            object-fit: cover;
+            flex-shrink: 0;
+            margin: 0.8rem;
+        }
+
+        &__title {
+            font-size: $text-sm;
+            font-weight: $font-bold;
+            color: $color-text;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 0 1.6rem;
+
+        &__controls {
+            display: none;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(8, 13rem);
+            gap: 3.5rem;
+            width: max-content;
+        }
+    }
+
+
+}

@@ -19,3 +19,14 @@
     overflow-y: auto;
     min-height: 0;
 }
+
+@media (max-width: 768px) {
+    .app__main {
+        grid-column: 1;
+        grid-row: 1;
+        border: none;
+        border-radius: 0;
+        margin-right: 0;
+        grid-template-rows: auto 1fr;
+    }
+}

@@ -55,3 +55,34 @@ body {
         background: $color-muted;
   }
 }
+
+// ── Mobile ─────────────────────────────────
+@media (max-width: 768px) {
+    .app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 72px 60px;
+    }
+
+    .app__sidebar {
+        display: none;
+    }
+
+    .app__nav {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+
+    .app__player {
+        grid-column: 1;
+        grid-row: 2;
+        display: none;
+    }
+
+    //Temp app values to hide to remove player 
+    .app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 60px; // content | bottom-nav
+    }
+}
+

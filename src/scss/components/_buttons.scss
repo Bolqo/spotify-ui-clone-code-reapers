@@ -6,20 +6,28 @@
     gap: 0.8rem;
 
     &__btn {
-        padding: 0.6rem 1.6rem;
-        border-radius: 0.8rem;
-        border: none;
-        background: rgba($dark-grey, 0.5);
-        color: $color-text;
-        font-size: $text-sm;
-        cursor: pointer;
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.8rem;
+    border: none;
+    background: rgba($dark-grey, 0.5);
+    color: $color-text;
+    font-size: $text-sm;
+    cursor: pointer;
 
-        &--active {
+    &:hover {
+        background: $color-bg-card;
+    }
+
+    &--active {
+        background: $white;
+        color: $black;
+        font-weight: $font-bold;
+
+        &:hover {
             background: $white;
-            color: $black;
-            font-weight: $font-bold;
         }
     }
+}
 }
 
 .sort-btn {
@@ -37,5 +45,11 @@
     &__icon {
         width: 2rem;
         height: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters__btn:first-child {
+        display: none;
     }
 }
