@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Reapers — Spotify UI Clone</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green:      #1ED760;
+      --black:      #060606;
+      --dark:       #111111;
+      --card:       #1a1a1a;
+      --card2:      #242424;
+      --white:      #E0E0E0;
+      --muted:      #898989;
+      --font:       'Satoshi', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font);
+      overflow: hidden;
+    }
+
+    /* ── Slideshow shell ── */
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 6rem 6.5rem;
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity .45s ease, transform .45s ease;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+
+    .slide.exit {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+
+    /* ── Nav controls ── */
+    .controls {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      z-index: 100;
+    }
+
+    .btn-nav {
+      background: var(--card2);
+      border: none;
+      color: var(--white);
+      font-family: var(--font);
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: .5rem 1.8rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+
+    .btn-nav:hover { background: var(--green); color: var(--black); }
+    .btn-nav:disabled { opacity: .3; cursor: default; }
+    .btn-nav:disabled:hover { background: var(--card2); color: var(--white); }
+
+    .counter {
+      font-size: 1.3rem;
+      color: var(--muted);
+      min-width: 6rem;
+      text-align: center;
+    }
+
+    /* ── Slide dots ── */
+    .dots {
+      position: fixed;
+      bottom: .3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: .8rem;
+    }
+
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--muted);
+      transition: background .3s, transform .3s;
+    }
+
+    .dot.active { background: var(--green); transform: scale(1.4); }
+
+    /* ── Progress bar ── */
+    .progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: var(--green);
+      transition: width .4s ease;
+      z-index: 100;
+    }
+
+    /* ── Slide number badge ── */
+    .slide-num {
+      position: fixed;
+      top: 2rem; right: 2.4rem;
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    /* ── Typography helpers ── */
+    .tag {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: .6rem;
+    }
+
+    h1 { font-size: 5.6rem; font-weight: 900; line-height: 1; }
+    h2 { font-size: 3.4rem; font-weight: 700; line-height: 1.1; }
+    h3 { font-size: 2rem; font-weight: 700; }
+    p  { font-size: 1.35rem; color: var(--muted); line-height: 1.6; max-width: 70rem; }
+
+    .accent { color: var(--green); }
+
+    .divider {
+      width: 5rem; height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      margin: .8rem 0;
+    }
+
+    /* ── Card grid ── */
+    .grid {
+      display: grid;
+      gap: .9rem;
+      width: 100%;
+      max-width: 96rem;
+      margin-top: 1.4rem;
+    }
+
+    .grid--2 { grid-template-columns: repeat(2, 1fr); }
+    .grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: var(--card);
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #222;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .card:hover { border-color: var(--green); transform: translateY(-3px); }
+
+    .card__icon {
+      font-size: 2rem;
+      margin-bottom: .5rem;
+    }
+
+    .card__title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: .3rem;
+      color: var(--white);
+    }
+
+    .card__sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    /* ── Team member card ── */
+    .member {
+      background: var(--card);
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.6rem;
+      text-align: center;
+      border: 1px solid #222;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .member:hover { border-color: var(--green); transform: translateY(-3px); }
+
+    .avatar {
+      width: 5.2rem; height: 5.2rem;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 900; color: var(--black);
+      margin: 0 auto 1rem;
+    }
+
+    .member__name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: .3rem;
+    }
+
+    .member__role {
+      font-size: 1.05rem;
+      color: var(--green);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .7rem;
+    }
+
+    .member__tasks {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Tech pill ── */
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.8rem;
+      justify-content: center;
+    }
+
+    .pill {
+      background: var(--card2);
+      border: 1px solid #333;
+      border-radius: 50px;
+      padding: .7rem 1.8rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      transition: border-color .2s;
+    }
+
+    .pill:hover { border-color: var(--green); }
+    .pill span { font-size: 1.6rem; }
+
+    /* ── Page list ── */
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .6rem;
+      width: 100%;
+      max-width: 96rem;
+      margin-top: 1rem;
+    }
+
+    .page-item {
+      background: var(--card);
+      border-radius: .8rem;
+      padding: .7rem 1.2rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      border-left: 3px solid var(--green);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .page-item .num {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--green);
+      min-width: 1.6rem;
+    }
+
+    /* ── Stats row ── */
+    .stats {
+      display: flex;
+      gap: 5rem;
+      margin-top: 2rem;
+    }
+
+    .stat { text-align: center; }
+
+    .stat__val {
+      font-size: 4.8rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .stat__label {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-top: .4rem;
+    }
+
+    /* ── Code snippet ── */
+    .code-block {
+      background: var(--card);
+      border: 1px solid #2a2a2a;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 1.15rem;
+      color: #ccc;
+      line-height: 1.8;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .code-block .kw  { color: #c792ea; }
+    .code-block .str { color: var(--green); }
+    .code-block .cm  { color: #546e7a; }
+
+    /* ── Slide 1: Hero ── */
+    #slide-1 { text-align: center; }
+
+    .spotify-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .logo-mark {
+      width: 4.4rem; height: 4.4rem;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .logo-mark svg { width: 2.6rem; fill: var(--black); }
+
+    .logo-text {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+
+    /* ── Glow effect ── */
+    .glow {
+      position: absolute;
+      width: 50rem; height: 50rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30,215,96,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .glow--tl { top: -15rem; left: -15rem; }
+    .glow--br { bottom: -15rem; right: -15rem; }
+
+    /* ── Timeline ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .tl-dot {
+      width: 1rem; height: 1rem;
+      min-width: 1rem;
+      border-radius: 50%;
+      background: var(--green);
+      margin-top: .35rem;
+    }
+
+    .tl-content { flex: 1; }
+
+    .tl-title { font-size: 1.3rem; font-weight: 700; margin-bottom: .15rem; }
+    .tl-sub   { font-size: 1.1rem; color: var(--muted); }
+
+    /* ── keyframe for slide-in ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide.active > * { animation: fadeUp .5s ease both; }
+    .slide.active > *:nth-child(1) { animation-delay: .05s; }
+    .slide.active > *:nth-child(2) { animation-delay: .12s; }
+    .slide.active > *:nth-child(3) { animation-delay: .19s; }
+    .slide.active > *:nth-child(4) { animation-delay: .26s; }
+    .slide.active > *:nth-child(5) { animation-delay: .33s; }
+    .slide.active > *:nth-child(6) { animation-delay: .40s; }
+  </style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="slide-num" id="slideNum">1 / 8</div>
+
+<div class="deck" id="deck">
+
+  <!-- ── Slide 1: Hero ── -->
+  <div class="slide active" id="slide-1">
+    <div class="glow glow--tl"></div>
+    <div class="glow glow--br"></div>
+
+    <div class="spotify-logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+        </svg>
+      </div>
+      <span class="logo-text">Spotify UI Clone</span>
+    </div>
+
+    <h1><span class="accent">Code</span> Reapers</h1>
+    <div class="divider" style="margin: 2rem auto;"></div>
+    <p style="text-align:center;">A pixel-perfect frontend clone of the Spotify web platform,<br>built with HTML5, SCSS & JavaScript as part of the 10x final assessment.</p>
+
+    <div class="pills" style="margin-top: 1.8rem;">
+      <div class="pill"><span>📅</span> March 2026</div>
+      <div class="pill"><span>🏫</span> 10x Academy</div>
+      <div class="pill"><span>🔗</span> github.com/Bolqo</div>
+    </div>
+  </div>
+
+  <!-- ── Slide 2: Project Overview ── -->
+  <div class="slide" id="slide-2">
+    <div class="tag">What we built</div>
+    <h2>Project <span class="accent">Overview</span></h2>
+    <div class="divider"></div>
+    <p>A fully responsive, multi-page Spotify web UI clone faithfully following the official Figma design. The project focuses on semantic HTML, scalable SCSS architecture, and clean Git collaboration.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__val">16</div>
+        <div class="stat__label">screens built</div>
+      </div>
+      <div class="stat">
+        <div class="stat__val">11</div>
+        <div class="stat__label">HTML pages</div>
+      </div>
+      <div class="stat">
+        <div class="stat__val">25+</div>
+        <div class="stat__label">SCSS modules</div>
+      </div>
+      <div class="stat">
+        <div class="stat__val">3</div>
+        <div class="stat__label">team members</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Slide 3: Technologies ── -->
+  <div class="slide" id="slide-3">
+    <div class="tag">Stack</div>
+    <h2>Technologies <span class="accent">Used</span></h2>
+    <div class="divider"></div>
+
+    <div class="grid grid--4" style="margin-top: 1.4rem;">
+      <div class="card" style="text-align:center;">
+        <div class="card__icon">🌐</div>
+        <div class="card__title">HTML5</div>
+        <div class="card__sub">Semantic markup for all 11 pages with accessibility in mind</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card__icon">🎨</div>
+        <div class="card__title">CSS3</div>
+        <div class="card__sub">Grid & Flexbox layouts, animations, responsive media queries</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card__icon">⚡</div>
+        <div class="card__title">SCSS</div>
+        <div class="card__sub">7-1 pattern — variables, mixins, functions, modular partials</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card__icon">🔧</div>
+        <div class="card__title">Git</div>
+        <div class="card__sub">Branch-based workflow, pull requests, conflict resolution</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Slide 4: SCSS Architecture ── -->
+  <div class="slide" id="slide-4">
+    <div class="tag">Architecture</div>
+    <h2>SCSS <span class="accent">Structure</span></h2>
+    <div class="divider"></div>
+
+    <div class="grid grid--3" style="max-width: 88rem; margin-top: 1rem;">
+      <div class="card">
+        <div class="card__title">📁 abstracts/</div>
+        <div class="card__sub" style="margin-top:.8rem; line-height:2;">
+          _variables.scss<br>_mixins.scss<br>_functions.scss
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__title">📁 base/</div>
+        <div class="card__sub" style="margin-top:.8rem; line-height:2;">
+          _reset.scss<br>_global.scss<br>_typography.scss
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__title">📁 layout/</div>
+        <div class="card__sub" style="margin-top:.8rem; line-height:2;">
+          _sidebar.scss<br>_navigation.scss<br>_player.scss · _main.scss
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__title">📁 components/</div>
+        <div class="card__sub" style="margin-top:.8rem; line-height:2;">
+          _buttons.scss<br>_cards.scss<br>_playlist-items.scss
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__title">📁 pages/</div>
+        <div class="card__sub" style="margin-top:.8rem; line-height:2;">
+          _home · _library · _album<br>_artist · _search · _track<br>_podcast · _discover…
+        </div>
+      </div>
+      <div class="card" style="border-color: var(--green)">
+        <div class="card__title" style="color: var(--green)">✔ main.scss</div>
+        <div class="card__sub" style="margin-top:.8rem; line-height:2;">
+          Single entry point using<br>@use to import all modules<br>No global pollution
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Slide 5: Pages ── -->
+  <div class="slide" id="slide-5">
+    <div class="tag">Scope</div>
+    <h2>16 <span class="accent">Screens</span></h2>
+    <div class="divider"></div>
+
+    <div class="page-grid">
+      <div class="page-item"><span class="num">01</span> Home</div>
+      <div class="page-item"><span class="num">02</span> Home + Friends Panel</div>
+      <div class="page-item"><span class="num">03</span> Search / Discover</div>
+      <div class="page-item"><span class="num">04</span> My Library</div>
+      <div class="page-item"><span class="num">05</span> Liked Songs</div>
+      <div class="page-item"><span class="num">06</span> Track Detail</div>
+      <div class="page-item"><span class="num">07</span> Album Page</div>
+      <div class="page-item"><span class="num">08</span> Playlist Page</div>
+      <div class="page-item"><span class="num">09</span> Artist — Home tab</div>
+      <div class="page-item"><span class="num">10</span> Artist — About tab</div>
+      <div class="page-item"><span class="num">11</span> Artist — Albums (grid)</div>
+      <div class="page-item"><span class="num">12</span> Artist — Albums (list)</div>
+      <div class="page-item"><span class="num">13</span> Podcast Show</div>
+      <div class="page-item"><span class="num">14</span> Podcast Episode</div>
+      <div class="page-item"><span class="num">15</span> Discover — carousel 1</div>
+      <div class="page-item"><span class="num">16</span> Discover — carousel 2</div>
+    </div>
+  </div>
+
+  <!-- ── Slide 6: Team ── -->
+  <div class="slide" id="slide-6">
+    <div class="tag">People</div>
+    <h2>Meet the <span class="accent">Team</span></h2>
+    <div class="divider"></div>
+
+    <div class="grid grid--3" style="max-width: 90rem; margin-top: 1.4rem;">
+      <div class="member">
+        <div class="avatar">IB</div>
+        <div class="member__name">Irakli Bolkvadze</div>
+        <div class="member__role">Project Lead</div>
+        <div class="member__tasks">
+          Full HTML structure · All pages scaffolding<br>
+          SCSS setup & shared abstracts<br>
+          Sidebar · Navigation · Home<br>
+          Library · Liked Songs
+        </div>
+      </div>
+      <div class="member">
+        <div class="avatar">QM</div>
+        <div class="member__name">Qristine Mirzoiani</div>
+        <div class="member__role">UI Developer</div>
+        <div class="member__tasks">
+          Joined 11.03.2026<br>
+          Library page SCSS<br>
+          Page-level styling<br>
+          library.html
+        </div>
+      </div>
+      <div class="member">
+        <div class="avatar">EB</div>
+        <div class="member__name">Enrike Bedinadze</div>
+        <div class="member__role">UI Developer</div>
+        <div class="member__tasks">
+          Bottom Player Bar<br>
+          _player.scss layout<br>
+          Additional HTML pages<br>
+          Friends Panel
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Slide 7: Workflow ── -->
+  <div class="slide" id="slide-7">
+    <div class="tag">Process</div>
+    <h2>Git <span class="accent">Workflow</span></h2>
+    <div class="divider"></div>
+
+    <div style="display: flex; gap: 3rem; align-items: stretch; margin-top: 1rem; width: 100%; max-width: 96rem;">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-title">Repository Setup</div>
+            <div class="tl-sub">Irakli creates repo, builds folder structure, sets up main.scss entry point and all SCSS partials</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-title">Feature Branches</div>
+            <div class="tl-sub">Each team member works on their own branch — no direct commits to main</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-title">Pull Requests & Review</div>
+            <div class="tl-sub">Code reviewed before merging — consistent naming, no !important, proper @use imports</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-title">Deadline: March 13, 2026</div>
+            <div class="tl-sub">All 16 screens delivered and merged to main on time</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block" style="flex:0 0 36rem; font-size: 1.1rem; align-self: flex-start;">
+        <span class="cm"># branch per feature</span><br>
+        git checkout -b <span class="str">feat/player-bar</span><br>
+        <br>
+        <span class="cm"># compile SCSS</span><br>
+        npm run <span class="str">sass:watch</span><br>
+        <br>
+        <span class="cm"># commit with clear message</span><br>
+        git commit -m <span class="str">"add player bar styles"</span><br>
+        <br>
+        <span class="cm"># open PR → review → merge</span><br>
+        git push origin <span class="str">feat/player-bar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Slide 8: Thank You ── -->
+  <div class="slide" id="slide-8" style="text-align:center;">
+    <div class="glow glow--tl"></div>
+    <div class="glow glow--br"></div>
+
+      <div class="logo-mark" style="margin: 0 auto 1.6rem;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+      </svg>
+    </div>
+
+    <h1>Thank <span class="accent">You</span></h1>
+    <div class="divider" style="margin: 2rem auto;"></div>
+    <p style="text-align:center; margin-bottom: 1.6rem;">
+      Built with passion by <strong style="color:var(--white)">Code Reapers</strong> at 10x Academy.
+    </p>
+
+    <div class="grid grid--2" style="max-width: 60rem; margin-top: 1.6rem;">
+      <div class="card" style="text-align:center;">
+        <div class="card__icon">💻</div>
+        <div class="card__title">GitHub</div>
+        <div class="card__sub">github.com/Bolqo/<br>spotify-ui-clone-code-reapers</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card__icon">🎨</div>
+        <div class="card__title">Figma Design</div>
+        <div class="card__sub">10X markup exam project — Spotify<br>by 10x Academy</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /deck -->
+
+<!-- Controls -->
+<div class="controls">
+  <button class="btn-nav" id="btnPrev" disabled>← Prev</button>
+  <span class="counter" id="counter">1 / 8</span>
+  <button class="btn-nav" id="btnNext">Next →</button>
+</div>
+
+<div class="dots" id="dots"></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total  = slides.length;
+  let   cur    = 0;
+
+  const progress = document.getElementById('progress');
+  const slideNum = document.getElementById('slideNum');
+  const counter  = document.getElementById('counter');
+  const btnPrev  = document.getElementById('btnPrev');
+  const btnNext  = document.getElementById('btnNext');
+  const dotsEl   = document.getElementById('dots');
+
+  // build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    slides[cur].classList.add('exit');
+    setTimeout(() => slides[cur < n ? cur : n + 1 < total ? cur : cur].classList.remove('exit'), 450);
+    const prev = cur;
+    cur = Math.max(0, Math.min(total - 1, n));
+    slides[prev].classList.remove('exit');
+    slides[cur].classList.add('active');
+
+    dotsEl.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+    progress.style.width = ((cur + 1) / total * 100) + '%';
+    slideNum.textContent = (cur + 1) + ' / ' + total;
+    counter.textContent  = (cur + 1) + ' / ' + total;
+    btnPrev.disabled = cur === 0;
+    btnNext.disabled = cur === total - 1;
+  }
+
+  btnPrev.addEventListener('click', () => goTo(cur - 1));
+  btnNext.addEventListener('click', () => goTo(cur + 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  goTo(cur + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    goTo(cur - 1);
+  });
+
+  // init progress
+  progress.style.width = (1 / total * 100) + '%';
+</script>
+</body>
+</html>
